@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTBlog.Api", "src\PTBlog.Api\PTBlog.Api.csproj", "{23535344-1822-4EAC-A34D-DBC2F7EF4382}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PTBlog.Api", "src\PTBlog.Api\PTBlog.Api.csproj", "{23535344-1822-4EAC-A34D-DBC2F7EF4382}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PTBlog.Core", "src\PTBlog.Core\PTBlog.Core.csproj", "{5339C6D1-7DD0-4C82-82D7-804B84656B61}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PTBlog.Data", "src\PTBlog.Data\PTBlog.Data.csproj", "{E7945BFE-29DB-4F4D-BDC9-F6380C0F177E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PTBlog.WebApp", "src\PTBlog.WebApp\PTBlog.WebApp.csproj", "{57701556-BCCE-4463-885B-1560ACD078A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{23535344-1822-4EAC-A34D-DBC2F7EF4382}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23535344-1822-4EAC-A34D-DBC2F7EF4382}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23535344-1822-4EAC-A34D-DBC2F7EF4382}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5339C6D1-7DD0-4C82-82D7-804B84656B61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5339C6D1-7DD0-4C82-82D7-804B84656B61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5339C6D1-7DD0-4C82-82D7-804B84656B61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5339C6D1-7DD0-4C82-82D7-804B84656B61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7945BFE-29DB-4F4D-BDC9-F6380C0F177E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7945BFE-29DB-4F4D-BDC9-F6380C0F177E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7945BFE-29DB-4F4D-BDC9-F6380C0F177E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7945BFE-29DB-4F4D-BDC9-F6380C0F177E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57701556-BCCE-4463-885B-1560ACD078A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57701556-BCCE-4463-885B-1560ACD078A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57701556-BCCE-4463-885B-1560ACD078A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57701556-BCCE-4463-885B-1560ACD078A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
