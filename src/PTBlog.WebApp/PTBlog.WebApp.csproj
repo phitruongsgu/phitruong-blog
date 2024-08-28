@@ -6,4 +6,20 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Handlebars.Net" Version="2.1.6" />
+    <PackageReference Include="MailKit" Version="4.7.1.1" />
+    <PackageReference Include="MediatR" Version="12.4.0" />
+    <PackageReference Include="MimeKit" Version="4.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PTBlog.Core\PTBlog.Core.csproj" />
+    <ProjectReference Include="..\PTBlog.Data\PTBlog.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\libs\ckeditor\.circleci\config.yml" />
+  </ItemGroup>
+
 </Project>

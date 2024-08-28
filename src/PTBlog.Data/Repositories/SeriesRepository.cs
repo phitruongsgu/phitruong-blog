@@ -30,6 +30,13 @@ namespace PTBlog.Data.Repositories
             }
         }
 
+        public async Task<SeriesDto> GetBySlug(string slug)
+        {
+            var series = await _context.Series.FirstOrDefaultAsync(x => x.Slug == slug);
+            return _mapper.Map<SeriesDto>(series);
+
+        }
+
         public async Task<bool> HasPost(Guid seriesId)
         {
             return await _context.PostInSeries.AnyAsync(x => x.SeriesId == seriesId);
@@ -68,6 +75,28 @@ namespace PTBlog.Data.Repositories
             return await _mapper.ProjectTo<PostInListDto>(query).ToListAsync();
         }
 
+        public async Task<PagedResult<PostInListDto>> GetAllPostsInSeries(string slug, int pageIndex = 1, int pageSize = 10)
+        {
+            var query = from pis in _context.PostInSeries
+                        join p in _context.Posts
+                        on pis.PostId equals p.Id
+                        join s in _context.Series on pis.SeriesId equals s.Id
+                        where s.Slug == slug
+                        select p;
+            var totalRow = await query.CountAsync();
+
+            query = query.OrderByDescending(x => x.DateCreated)
+               .Skip((pageIndex - 1) * pageSize)
+               .Take(pageSize);
+
+            return new PagedResult<PostInListDto>
+            {
+                Results = await _mapper.ProjectTo<PostInListDto>(query).ToListAsync(),
+                CurrentPage = pageIndex,
+                RowCount = totalRow,
+                PageSize = pageSize
+            };
+        }
         public async Task<bool> IsPostInSeries(Guid seriesId, Guid postId)
         {
             return await _context.PostInSeries.AnyAsync(x => x.SeriesId == seriesId && x.PostId == postId);
